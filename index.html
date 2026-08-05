@@ -8,7 +8,7 @@ layout: null
   <title>AR Bunkasai</title>
   <!-- ① スクリプトの読み込み -->
 <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.2/aframe/build/aframe-ar.js"></script>
+<script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
 <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js">
 </head>
 
@@ -17,11 +17,11 @@ layout: null
 <!-- シーンの追加とデバックUIを非表示 -->
  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled:false;">
 <a-assets><a-asset-item id="bouningen" src="model/yarakasita.glb"></a-asset-item></a-assets>
-  <a-entity scale="100 100 100" position=".5 .5 .-3" animation-mixer="clip:*" gltf-model="#bouningen" visible="true">
-        </a-entity>
-<a-sphere scale="1 1 1" position="0 .5 .-10" color="#ea2">
-        <a-light type="ambient" color="#ffffff"></a-light>
-        <a-light type="point" intensity="2" position="0 4 0"></a-light>
+  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+
+  <a-box material="color: red" gps-entity-place="latitude: 35.9379815; longitude: 139.7874739;" scale="5 8 5"></a-box>
+
+  <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
 </a-scene>
 </body>
