@@ -15,9 +15,9 @@ layout: null
 
 <!-- シーンの追加とデバックUIを非表示 -->
  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled:false;">
-<a-assets><a-asset-item id="bouningen" src="AR/models/yarakasita.glb"></a-asset-item></a-assets>
+<a-assets><a-asset-item id="bouningen" src="model/yarakasita.glb"></a-asset-item></a-assets>
   <a-camera gps-camera rotation-reader></a-camera>
-        <a-entity position="0 0.4 -3" animation-mixer="clip:*" gltf-model="#bouningen" visible="true">
+        <a-entity position="0 0.4 -3" gltf-model="#bouningen" visible="true">
         </a-entity>
 
         <a-light type="ambient" color="#ffffff"></a-light>
