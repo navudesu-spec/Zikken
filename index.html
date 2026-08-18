@@ -31,14 +31,16 @@ layout: null
 
 <a-marker type="pattern" url="AR/gazou/pattern-IMG_3680.patt">
   <a-entity position="0 1.6 -1"> 
-  <a-entity gltf-model="#bouningen" rotation="180 180 0"></a-entity>
+  <a-entity gltf-model="#bouningen" rotation="180 90 0"></a-entity>
   <a-entity position="0 -0.05 0" hit-box>
-                    <a-entity class="raycastable" geometry="primitive:cylinder" material="color:red; opacity: 0.5" scale="0.2 0.2 0.2" position="0 0.1 0" visible="true"></a-entity>
-                    <a-entity class="raycastable" geometry="primitive:box" material="color:blue; opacity: 0.5" scale="0.2 0.25 0.1" position="0 0 0.1" visible="true"></a-entity>
+                    <a-entity class="raycastable" geometry="primitive:cylinder" material="color:red; opacity: 0.5" scale="1 1 1" position="0 0.1 0" visible="true"></a-entity>
+                    <a-entity class="raycastable" geometry="primitive:box" material="color:blue; opacity: 0.5" scale="1 1 1" position="0 0 0.1" visible="true"></a-entity>
                 </a-entity>
             </a-entity>
    <a-sphere scale=".25 .25 .25" position="0 .10 0" color="#00f">
   </a-marker>
+
+    
     <a-marker preset="hiro">
         <!-- 3Dモデルを呼び出す -->
         <a-entity position="0 1.6 -1"> 
