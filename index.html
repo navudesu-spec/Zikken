@@ -14,7 +14,30 @@ layout: null
             AFRAME.registerComponent('hit-box', {
                 init:function(){
                     this.el.addEventListener('click', ()=>{
-                        console.log('clicked!');
+                const el = this.el;
+
+                // 1. 連打防止：当たり判定のクラスを一時的に削除
+                el.classList.remove('raycastable');
+                console.log(el.id + '：判定を消去、アニメーション開始');
+
+                // 2. アニメーションを動的に追加（例：Y軸を中心に1秒で1回転）
+                el.setAttribute('animation', {
+                    property: 'rotation',
+                    to: '0 360 0',
+                    dur: 1000,
+                    easing: 'easeOutQuad'
+                });
+
+                // 3. アニメーション終了（1000ミリ秒後）に元の状態に戻す
+                setTimeout(() => {
+                    // アニメーション属性を削除し、角度を元に戻す
+                    el.removeAttribute('animation');
+                    el.setAttribute('rotation', '0 0 0');
+
+                    // 当たり判定のクラスを再び追加して元に戻す
+                    el.classList.add('raycastable');
+                    console.log(el.id + '：元の状態に戻りました');
+                }, 1000);
                     });
                 }
             });
