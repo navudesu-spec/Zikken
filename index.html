@@ -13,25 +13,29 @@ layout: null
 <script>
        AFRAME.registerComponent('hit-box', {
         init:function(){
-            this.el.addEventListener('click', ()=>{
-              raycasterEl.setAttribute("raycaster", "enabled", false);
-              random= Math.floor( Math.random()*3)+1;
-              if (random==1)
+          this.el.addEventListener('click', ()=>{
+            const scene = document.querySelector("a-scene");
+            const raycasterEl = document.querySelector("[raycaster]");
+            this.el.setAttribute("visible", false);
+            
+            random= Math.floor( Math.random()*3)+1;
+            if (random==1)
                 {const box = document.createElement("a-box");
                              box.setAttribute("color", "red");
                              box.setAttribute("position", "0 1 -3");
                              scene.appendChild(box);}
-                else if (random==2)
+            else if (random==2)
                 {const box = document.createElement("a-box");
                              box.setAttribute("color", "blue");
                              box.setAttribute("position", "0 1 -3");
                              scene.appendChild(box);}
-                else 
+            else 
                   {const box = document.createElement("a-box");
                              box.setAttribute("color", "purple");
                              box.setAttribute("position", "0 1 -3");
                              scene.appendChild(box);}
-             raycasterEl.setAttribute("raycaster", "enabled", true);
+            setTimeout(() => {this.el.setAttribute("visible", true);}, 1000); 
+            
                     });
                 }
             });
