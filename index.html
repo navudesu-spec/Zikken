@@ -16,6 +16,7 @@ layout: null
           this.el.addEventListener('click', ()=>{
             const scene = document.querySelector("a-scene");
             const raycasterEl = document.querySelector("[raycaster]");
+            raycasterEl.setAttribute("raycaster", "enabled", false);
             this.el.setAttribute("visible", false);
             
             random= Math.floor( Math.random()*3)+1;
@@ -73,11 +74,16 @@ layout: null
                 }, 3000); 
                 }
             
-            setTimeout(() => {this.el.setAttribute("visible", true);}, 4000); 
+            setTimeout(() => {this.el.setAttribute("visible", true);}, 3500); 
     
                     });
                 }
             });
+            setTimeout(() => {
+                raycasterEl.setAttribute("raycaster", "enabled", true);}, 3500); 
+
+  });
+    }
         </script>
   
 </head>
