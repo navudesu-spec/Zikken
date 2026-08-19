@@ -14,10 +14,10 @@ layout: null
        AFRAME.registerComponent('hit-box', {
         init:function(){
              this.el.addEventListener('click', ()=>{
-              random= Math.floor( Math.random()*2)+1;
-               if (random==1){alart('1');}
-                else if (random==2){alart('2');}
-                else {alart('3');}
+              random= Math.floor( Math.random()*3)+1;
+               if (random==1){alert('1');}
+                else if (random==2){alert('2');}
+                else {alert('3');}
                     
                     });
                 }
@@ -50,7 +50,7 @@ layout: null
     </a-marker>
 
   <a-entity camera> </a-entity>
-    </a-scene>
+    
 </a-scene>
 </body>
   
