@@ -16,7 +16,9 @@ AFRAME.registerComponent('hit-box', {
 
     const scene = document.querySelector("a-scene");
     const raycasterEl = document.querySelector("[raycaster]");
+    const targetEl = this.el.querySelector('.raycastable');
 
+    
     this.el.addEventListener('click', () => {
  
       targetEl.el.setAttribute("visible", false);
@@ -33,7 +35,7 @@ AFRAME.registerComponent('hit-box', {
         model.setAttribute("position", "0 0.1 0"); 
         model.setAttribute("scale", "1 1 1"); }
       else
-      {model.setAttribute("gltf-model", "koumorimodoki");
+      {model.setAttribute("gltf-model", "#koumorimodoki");
        model.setAttribute("position", "0 0.1 0"); 
        model.setAttribute("scale", "1 1 1"); }
    this.el.appendChild(model)
