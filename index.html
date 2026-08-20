@@ -43,18 +43,14 @@ AFRAME.registerComponent('hit-box', {
           if (model && model.parentNode) {
             model.parentNode.removeChild(model);
           }},3000);
-      const box = document.createElement('a-box');
-      box.setAttribute('position', '0 1.6 -3');
-    box.setAttribute('color', 'red');
-    box.setAttribute('scale', '1 1 1');
-      scene.appendChild(box);
+      
       setTimeout(() => {
         this.el.setAttribute("visible", true);
         if (raycasterEl) {
           raycasterEl.setAttribute("raycaster", "enabled", true);
         }
       }, 3500);
-
+alert('clicked!')
     });
   }
 });
