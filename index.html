@@ -33,12 +33,18 @@ AFRAME.registerComponent('hit-box', {
       if (random==1)
        {model.setAttribute("gltf-model", "#bouningen");
         model.setAttribute("position", "0 0.1 0"); 
-        model.setAttribute("scale", "1 1 1"); }
+        model.setAttribute("scale", "0.5 0.5 0.5"); }
+        model.setAttribute("routation", "90 0 90"); }
       else
       {model.setAttribute("gltf-model", "#koumorimodoki");
        model.setAttribute("position", "0 0.1 0"); 
        model.setAttribute("scale", "1 1 1"); }
-   if (markerEl) {
+   const markerEl = this.el.closest('a-marker');
+      if (markerEl) {
+        markerEl.appendChild(model);
+      }
+
+      if (markerEl) {
         markerEl.appendChild(model);
       }
    setTimeout(() => {
