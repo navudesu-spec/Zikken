@@ -49,6 +49,9 @@ AFRAME.registerComponent('hit-box', {
         if (raycasterEl) {
           raycasterEl.setAttribute("raycaster", "enabled", true);
         }
+        if (targetEl) {
+          targetEl.setAttribute("visible", true); 
+        }
       }, 3100);
 
     });
