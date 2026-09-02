@@ -70,7 +70,7 @@ AFRAME.registerComponent('hit-box', {
 <body style='margin: 0; overflow: hidden;'>
 
 <!-- シーンの追加とデバックUIを非表示 -->
-  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false; patternRayio=0.90">
 <a-assets><a-asset-item id="bouningen" src="model/yarakasita.glb"></a-asset-item>
 <a-asset-item id="koumorimodoki" src="model/koumorimodoki.glb"></a-asset-item></a-assets>
     
@@ -88,7 +88,7 @@ AFRAME.registerComponent('hit-box', {
             </a-entity>
             
     </a-marker>
-<a-marker type="pattern" url="Garoua/pattern-IMG_2161.patt">
+<a-marker type="pattern" url="">
     <a-entity position="0 1.6 0">
                 <!-- 3Dモデル -->
     
