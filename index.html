@@ -21,14 +21,6 @@ AFRAME.registerComponent('hit-box', {
     
     this.el.addEventListener('click', () => {
       targetEl.setAttribute("visible", false);
-       const markerEl = this.el.closest('a-marker');
-      let defaultModelEl = null;
-      if (markerEl) {
-        defaultModelEl = markerEl.querySelector('default-model');
-        if (defaultModelEl) {
-          defaultModelEl.setAttribute("visible", false);
-        }
-      }
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
@@ -62,8 +54,7 @@ AFRAME.registerComponent('hit-box', {
         if (targetEl) {
           targetEl.setAttribute("visible", true); 
           }
-        if (defaultModelEl) {
-          defaultModelEl.setAttribute("visible", "true");
+       
         }
       }, 3300);
       
