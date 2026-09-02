@@ -20,7 +20,6 @@ AFRAME.registerComponent('hit-box', {
 
     
     this.el.addEventListener('click', () => {
- 
       targetEl.setAttribute("visible", false);
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
@@ -54,6 +53,9 @@ AFRAME.registerComponent('hit-box', {
         }
         if (targetEl) {
           targetEl.setAttribute("visible", true); 
+        if (model && model.parentNode) {
+            model.parentNode..setAttribute("visible", "true");
+          }},3000);
         }
       }, 3300);
       
@@ -79,10 +81,10 @@ AFRAME.registerComponent('hit-box', {
    
      <a-marker preset="hiro">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#touch" rotation="0 0 0"></a-entity>
+        <a-entity gltf-model="#touch" rotation="90 0 0"></a-entity>
 
             <a-entity position="0  0" hit-box>
-                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="2 1 3" position="0 0 0" visible="true" dataType="atari-hantei-1"></a-entity>
+                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="2 2 4" position="0 0 0" visible="true" dataType="atari-hantei-1"></a-entity>
                 </a-entity>
         </a-sphere></a-marker>
 
