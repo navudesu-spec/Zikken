@@ -28,7 +28,7 @@ AFRAME.registerComponent('hit-box', {
   const markerEl = this.el.closest('a-marker');
         let touchModel = null;
         if (markerEl) {
-          touchModel = markerEl.querySelector('[gltf-model="#touch-src"]');
+          touchModel = markerEl.querySelector('[gltf-model="#touch"]');
           if (touchModel) {
             touchModel.setAttribute('visible', false);
           }
