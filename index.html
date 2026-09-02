@@ -79,10 +79,10 @@ AFRAME.registerComponent('hit-box', {
    
      <a-marker preset="hiro">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#touch" rotation="180 180 0"></a-entity>
-        <a-sphere scale=".25 .25 .25" position="0 .10 0" color="#00f">
-            <a-entity position="0 -0.05 0" hit-box>
-                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="1 1 1" position="0 0.1 0" visible="true" data-type="atari-hantei-1"></a-entity>
+        <a-entity gltf-model="#touch" rotation="180 0 0"></a-entity>
+
+            <a-entity position="0  0" hit-box>
+                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="3 3 3" position="0 0 0" visible="true" dataType="atari-hantei-1"></a-entity>
                 </a-entity>
         </a-sphere></a-marker>
 
