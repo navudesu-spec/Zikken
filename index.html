@@ -17,7 +17,8 @@ AFRAME.registerComponent('hit-box', {
     const scene = document.querySelector("a-scene");
     const raycasterEl = document.querySelector("[raycaster]");
     const targetEl = this.el.querySelector('.raycastable');
-    const model = document.querySelector('#touch');
+    const touchModel = document.querySelector('#touch'); 
+    
     
     this.el.addEventListener('click', () => {
       targetEl.setAttribute("visible", false);
@@ -25,6 +26,7 @@ AFRAME.registerComponent('hit-box', {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
    model.setAttribute('visible', false);
+       if (touchModel) touchModel.setAttribute('visible', false);
        const random = Math.floor(Math.random() * 2) + 1;
 
       const model = document.createElement("a-entity");
@@ -54,8 +56,8 @@ AFRAME.registerComponent('hit-box', {
         if (targetEl) {
           targetEl.setAttribute("visible", true); 
           }
-        model.setAttribute('visible', true); 
-        }
+      
+        if (touchModel) touchModel.setAttribute('visible', true); 
       }, 3300);
       
     });
