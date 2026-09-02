@@ -25,9 +25,9 @@ AFRAME.registerComponent('hit-box', {
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
-　　　const dataType = this.el.getAttribdata('data-type');
+　　　const dataType = targetEl ? targetEl.getAttribdata('data-type');
 
-      if (data-type=='atari-hantei-1')
+      if (dataType=='atari-hantei-1')
       { const random = Math.floor(Math.random() * 2) + 1;
 
       const model = document.createElement("a-entity");
@@ -70,10 +70,11 @@ AFRAME.registerComponent('hit-box', {
 <body style='margin: 0; overflow: hidden;'>
 
 <!-- シーンの追加とデバックUIを非表示 -->
-  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false; patternRayio=0.90">
+  <a-scene vr-mode-ui="enabled: false" embedded arjs="sourceType: webcam; debugUIEnabled: false; patternRatio=0.90">
 <a-assets><a-asset-item id="bouningen" src="model/yarakasita.glb"></a-asset-item>
-<a-asset-item id="koumorimodoki" src="model/koumorimodoki.glb"></a-asset-item></a-assets>
-    
+<a-assets><a-asset-item id="koumorimodoki" src="model/koumorimodoki.glb"></a-asset-item></a-assets>
+<a-assets><a-asset-item id="touch" src="model/touch.glb"></a-asset-item></a-assets>
+  
 <a-entity cursor="rayOrigin: mouse; fuse: false" raycaster="objects: .raycastable"></a-entity>
 
    
@@ -95,6 +96,7 @@ AFRAME.registerComponent('hit-box', {
    <a-entity position="0 -0.05 0" hit-box>
                     <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="1 1 1" position="0 0.1 0" visible="true" data-type="atari-hantei-1"></a-entity>
                 </a-entity>
+      <a-entity gltf-model="#touch" rotation="180 180 0"></a-entity>
             </a-entity>
        
      
