@@ -25,9 +25,7 @@ AFRAME.registerComponent('hit-box', {
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
-      const dataType = targetEl ? targetEl.getAttribute('data-type'):null;
-
-      if (dataType=='atari-hantei-1')
+  
       { const random = Math.floor(Math.random() * 2) + 1;
 
       const model = document.createElement("a-entity");
@@ -58,7 +56,7 @@ AFRAME.registerComponent('hit-box', {
           targetEl.setAttribute("visible", true); 
         }
       }, 3300);
-      }
+      
     });
   }
 });
@@ -90,7 +88,7 @@ AFRAME.registerComponent('hit-box', {
             </a-entity>
             
     </a-marker>
-<a-marker type="pattern" url="Garoua/pattern-untitled 50.patt">
+<a-marker type="pattern" url="Garoua/pattern-untitled50.patt">
     <a-entity position="0 1.6 0">
                 <!-- 3Dモデル -->
     
