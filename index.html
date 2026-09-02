@@ -16,17 +16,23 @@ AFRAME.registerComponent('hit-box', {
 
     const scene = document.querySelector("a-scene");
     const raycasterEl = document.querySelector("[raycaster]");
-    const targetEl = this.el.querySelector('.raycastable');
-  if (targetEl) {
+    const targetEl = this.el.querySelector('.raycastable'); 
+    this.el.addEventListener('click', () => {
+      
+        if (targetEl) {
           targetEl.setAttribute("visible", false);
         }
-    
-    this.el.addEventListener('click', () => {
-      targetEl.setAttribute("visible", false);
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
-   model.setAttribute('visible', false);
+  const markerEl = this.el.closest('a-marker');
+        let touchModel = null;
+        if (markerEl) {
+          touchModel = markerEl.querySelector('[gltf-model="#touch-src"]');
+          if (touchModel) {
+            touchModel.setAttribute('visible', false);
+          }
+        }
        if (touchModel) touchModel.setAttribute('visible', false);
        const random = Math.floor(Math.random() * 2) + 1;
 
@@ -56,7 +62,9 @@ AFRAME.registerComponent('hit-box', {
         }
         if (targetEl) {
           targetEl.setAttribute("visible", true); 
-         document.querySelector('#touch').setAttribute('visible', 'true');
+         if (touchModel) {
+            touchModel.setAttribute('visible', true);
+          }
         }
       }, 3300);
       
@@ -85,7 +93,7 @@ AFRAME.registerComponent('hit-box', {
         <a-entity gltf-model="#touch" rotation="0 270 90"　class="default-model"></a-entity>
 
             <a-entity position="0  0" hit-box>
-                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="2 4 4" position="0 0 0" visible="true" dataType="atari-hantei-1"></a-entity>
+                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="2 4 4" position="0 0 0" visible="true"></a-entity>
                 </a-entity>
         </a-sphere></a-marker>
 
