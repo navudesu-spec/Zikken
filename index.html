@@ -17,14 +17,14 @@ AFRAME.registerComponent('hit-box', {
     const scene = document.querySelector("a-scene");
     const raycasterEl = document.querySelector("[raycaster]");
     const targetEl = this.el.querySelector('.raycastable');
-
+    const model = document.querySelector('#touch');
     
     this.el.addEventListener('click', () => {
       targetEl.setAttribute("visible", false);
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
-  
+   model.setAttribute('visible', false);
        const random = Math.floor(Math.random() * 2) + 1;
 
       const model = document.createElement("a-entity");
@@ -54,7 +54,7 @@ AFRAME.registerComponent('hit-box', {
         if (targetEl) {
           targetEl.setAttribute("visible", true); 
           }
-       
+        model.setAttribute('visible', true); 
         }
       }, 3300);
       
