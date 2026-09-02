@@ -25,9 +25,9 @@ AFRAME.registerComponent('hit-box', {
       if (raycasterEl) {
         raycasterEl.setAttribute("raycaster", "enabled", false);
       }
-　　　const dataType = this.el.getAttribdata(data-type);
+　　　const dataType = this.el.getAttribdata('data-type');
 
-      if (data-type==atari-hantei-1)
+      if (data-type=='atari-hantei-1')
       { const random = Math.floor(Math.random() * 2) + 1;
 
       const model = document.createElement("a-entity");
@@ -58,8 +58,8 @@ AFRAME.registerComponent('hit-box', {
           targetEl.setAttribute("visible", true); 
         }
       }, 3300);
+      }
     });
-  }
   }
 });
 </script>
