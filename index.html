@@ -45,9 +45,8 @@ AFRAME.registerComponent('hit-box', {
         model.setAttribute("rotation", "180 270 0");
         model.setAttribute('animation-mixer', {
   clip: 'akeru',
-  loop: 'repeat',
+  loop: 'once',
   timeScale: 1, // 1で再生、0で一時停止
-  repetitions: 2,     // 繰り返す回数を指定
   clampWhenFinished: true    
 });
       
