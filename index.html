@@ -41,10 +41,17 @@ AFRAME.registerComponent('hit-box', {
       model.setAttribute("gltf-model", "#tresure");
         model.setAttribute("position", "0 0.1 0"); 
         model.setAttribute("scale", "1 1 1"); 
-        model.setAttribute("rotation", "0 90 90");
-
+        model.setAttribute("rotation", "180 270 0");
+        modelEl.setAttribute('animation-mixer', {
+  clip: 'akeru',
+  loop: 'repeat',
+  timeScale: 1 // 1で再生、0で一時停止
+  repetitions: 2,     // 繰り返す回数を指定
+  clampWhenFinished: true    
+});
       
     setTimeout(() => {
+      modelEl.setAttribute('animation-mixer', { timeScale: 0 })
       if (random>=90)
        {model.setAttribute("gltf-model", "#utiwa");
         model.setAttribute("position", "0 0.1 0"); 
