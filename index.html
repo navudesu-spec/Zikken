@@ -35,7 +35,7 @@ AFRAME.registerComponent('hit-box', {
           }
         }
       
-      if (touchModel) touchModel.setAttribute('visible', false);
+      if (touchModel){touchModel.setAttribute('visible', false);}
 
 
       
@@ -54,7 +54,7 @@ AFRAME.registerComponent('hit-box', {
 });
     
   if (markerEl) {
-          markerEl.appendChild(model); 
+          markerEl.appendChild(model); }
     
     setTimeout(() => {
          let rewardmodel = null;
