@@ -44,7 +44,7 @@ AFRAME.registerComponent('hit-box', {
    
       model.setAttribute("gltf-model", "#tresure");
         model.setAttribute("position", "0 0 0"); 
-        model.setAttribute("scale", "0.5 0.5 0.5"); 
+        model.setAttribute("scale", "1 1 1"); 
         model.setAttribute("rotation", "-90 270 90");
         model.setAttribute('animation-mixer', {
   clip: 'akeru',
@@ -65,19 +65,22 @@ AFRAME.registerComponent('hit-box', {
       {rewardmodel.setAttribute("gltf-model", "#utiwa");
         rewardmodel.setAttribute("position", "3 0 0"); 
         rewardmodel.setAttribute("scale", "0.5 0.5 0.5"); 
-        rewardmodel.setAttribute("rotation", "135 270 90"); }
+        rewardmodel.setAttribute("rotation", "-90 270 90");}
       else if(random>=50)
       {rewardmodel.setAttribute("gltf-model", "#taimatu");
-       rewardmodel.setAttribute("position", "0 3 0"); 
-       rewardmodel.setAttribute("scale", "1 1 1"); }
+       rewardmodel.setAttribute("position", "0 0 5"); 
+       rewardmodel.setAttribute("scale", "0.5 0.5 0.5"); 
+       rewardmodel.setAttribute("rotation", "-90 270 90");}
        else if(random>=10)
       {rewardmodel.setAttribute("gltf-model", "#yari");
        rewardmodel.setAttribute("position", "0 0 5"); 
-         rewardmodel.setAttribute("scale", "1 1 1"); } 
+         rewardmodel.setAttribute("scale", "0.5 0.5 0.5"); 
+       rewardmodel.setAttribute("rotation", "-90 270 90");}
           else 
        {rewardmodel.setAttribute("gltf-model", "#kne");
-       rewardmodel.setAttribute("position", "5 5 5"); 
-       rewardmodel.setAttribute("scale", "1 1 1"); }
+       rewardmodel.setAttribute("position", "0 0 5"); 
+       rewardmodel.setAttribute("scale", "0.5 0.5 0.5"); 
+        rewardmodel.setAttribute("rotation", "-90 270 90");}
         
       if (markerEl) {
         markerEl.appendChild(rewardmodel);
@@ -88,11 +91,10 @@ AFRAME.registerComponent('hit-box', {
     
    setTimeout(() => {
         
-              if (rewardmodel && rewardmodel.parentNode) {
-          rewardmodel.parentNode.removeChild(rewardmodel);}
-          },3000);
-      
+           
       setTimeout(() => {
+           if (rewardmodel && rewardmodel.parentNode) {
+          rewardmodel.parentNode.removeChild(rewardmodel);}
         this.el.setAttribute("visible", true);
         if (raycasterEl) {
           raycasterEl.setAttribute("raycaster", "enabled", true);
@@ -102,7 +104,7 @@ AFRAME.registerComponent('hit-box', {
           if (touchModel) {
           touchModel.setAttribute('visible', true); 
         }
-      }, 8000); 
+      }, 6000); 
     });
   }
 });
