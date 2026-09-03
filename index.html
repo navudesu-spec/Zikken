@@ -46,7 +46,7 @@ AFRAME.registerComponent('hit-box', {
         model.setAttribute('animation-mixer', {
   clip: 'akeru',
   loop: 'once',
-  timeScale: 1, // 1で再生、0で一時停止
+  timeScale: 1,
   clampWhenFinished: true    
 });
       
@@ -79,7 +79,7 @@ AFRAME.registerComponent('hit-box', {
    setTimeout(() => {
           if (model && model.parentNode) {
             model.parentNode.removeChild(model);
-          }},5000);
+          }},8000);
       
       setTimeout(() => {
         this.el.setAttribute("visible", true);
@@ -92,7 +92,7 @@ AFRAME.registerComponent('hit-box', {
             touchModel.setAttribute('visible', true);
           }
         }
-      }, 5000);
+      }, 8000);
       
     });
   }
@@ -128,7 +128,7 @@ AFRAME.registerComponent('hit-box', {
                 </a-entity>
         </a-marker>
            
-    </a-marker>
+   
 <a-marker type="pattern" url="GAzou/pattern-sword.patt">
     <a-entity position="0 1.6 0">
                 <!-- 3Dモデル -->
