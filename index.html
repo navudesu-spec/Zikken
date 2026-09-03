@@ -52,7 +52,8 @@ AFRAME.registerComponent('hit-box', {
        let rewardmodel = null;
       
     setTimeout(() => {
-      model.setAttribute('animation-mixer', { timeScale: 0 })
+      if (model && model.parentNode) {
+            model.parentNode.removeChild(model);}
      rewardmodel = document.createElement("a-entity");
       if (random>=90)
       {rewardmodel.setAttribute("gltf-model", "#utiwa");
@@ -78,8 +79,7 @@ AFRAME.registerComponent('hit-box', {
         markerEl.appendChild(model);
       }
    setTimeout(() => {
-          if (model && model.parentNode) {
-            model.parentNode.removeChild(model);}
+        
               if (rewardmodel && rewardmodel.parentNode) {
           rewardmodel.parentNode.removeChild(rewardmodel);}
           },8000);
