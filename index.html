@@ -42,7 +42,7 @@ AFRAME.registerComponent('hit-box', {
       model.setAttribute("gltf-model", "#tresure");
         model.setAttribute("position", "0 0.1 0"); 
         model.setAttribute("scale", "1 1 1"); 
-        model.setAttribute("rotation", "180 270 0");
+        model.setAttribute("rotation", "90 180 0");
         model.setAttribute('animation-mixer', {
   clip: 'akeru',
   loop: 'once',
@@ -52,6 +52,7 @@ AFRAME.registerComponent('hit-box', {
       
     setTimeout(() => {
       model.setAttribute('animation-mixer', { timeScale: 0 })
+      let model = document.createElement("a-entity");
       if (random>=90)
        {model.setAttribute("gltf-model", "#utiwa");
         model.setAttribute("position", "0 0.1 0"); 
