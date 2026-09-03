@@ -94,7 +94,7 @@ AFRAME.registerComponent('hit-box', {
            
       setTimeout(() => {
            if (model && model.parentNode) {
-          rewardmodel.parentNode.removeChild(rewardmodel);}
+          model.parentNode.removeChild(rewardmodel);}
         this.el.setAttribute("visible", true);
         if (raycasterEl) {
           raycasterEl.setAttribute("raycaster", "enabled", true);
