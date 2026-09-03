@@ -42,16 +42,16 @@ AFRAME.registerComponent('hit-box', {
         model.setAttribute("position", "0 0.1 0"); 
         model.setAttribute("scale", "1 1 1"); 
         model.setAttribute("rotation", "180 270 0");
-        modelEl.setAttribute('animation-mixer', {
+        model.setAttribute('animation-mixer', {
   clip: 'akeru',
   loop: 'repeat',
-  timeScale: 1 // 1で再生、0で一時停止
+  timeScale: 1, // 1で再生、0で一時停止
   repetitions: 2,     // 繰り返す回数を指定
   clampWhenFinished: true    
 });
       
     setTimeout(() => {
-      modelEl.setAttribute('animation-mixer', { timeScale: 0 })
+      model.setAttribute('animation-mixer', { timeScale: 0 })
       if (random>=90)
        {model.setAttribute("gltf-model", "#utiwa");
         model.setAttribute("position", "0 0.1 0"); 
@@ -120,7 +120,7 @@ AFRAME.registerComponent('hit-box', {
    
      <a-marker preset="hiro">
         <!-- 3Dモデルを呼び出す -->
-        <a-entity gltf-model="#touch" rotation="0 270 90"　class="default-model"></a-entity>
+        <a-entity gltf-model="#touch" rotation="0 270 90" class="default-model"></a-entity>
 
             <a-entity position="0 0 3" hit-box>
                     <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="3 4 4" position="0 3 0" visible="true"></a-entity>
