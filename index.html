@@ -36,7 +36,7 @@ AFRAME.registerComponent('hit-box', {
       
       if (touchModel) touchModel.setAttribute('visible', false);
       const random = Math.floor(Math.random() * 100) + 1;
-　　　　const model = document.createElement("a-entity");
+      const model = document.createElement("a-entity");
    
       model.setAttribute("gltf-model", "#tresure");
         model.setAttribute("position", "0 0.1 0"); 
@@ -63,7 +63,7 @@ AFRAME.registerComponent('hit-box', {
        model.setAttribute("position", "0 0.1 0"); 
        model.setAttribute("scale", "1 1 1"); }
      }, 3000);
-      });
+     
     
       if (markerEl) {
         markerEl.appendChild(model);
