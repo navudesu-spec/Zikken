@@ -79,13 +79,13 @@ AFRAME.registerComponent('hit-box', {
      
     
       if (markerEl) {
-        markerEl.appendChild(model);
+        markerEl.appendChild(rewardmodel);
       }
    setTimeout(() => {
         
               if (rewardmodel && rewardmodel.parentNode) {
           rewardmodel.parentNode.removeChild(rewardmodel);}
-          },8000);
+          },3000);
       
       setTimeout(() => {
         this.el.setAttribute("visible", true);
