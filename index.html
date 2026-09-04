@@ -47,7 +47,7 @@ layout: null
    
       model.setAttribute("gltf-model", "#tresure");
         model.setAttribute("position", "0 0 0"); 
-        model.setAttribute("scale", "1 1 1"); 
+        model.setAttribute("scale", "0.6 0.6 0.6"); 
         model.setAttribute("rotation", "-90 270 90");
         model.setAttribute('animation-mixer', {
   clip: 'akeru',
@@ -68,22 +68,22 @@ layout: null
       {rewardmodel.setAttribute("gltf-model", "#utiwa");
         rewardmodel.setAttribute("position", "0 0 1"); 
         rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
-        rewardmodel.setAttribute("rotation", "-90 -180 0");}
+        rewardmodel.setAttribute("rotation", "-90 180 0");}
       else if(random>=50)
       {rewardmodel.setAttribute("gltf-model", "#taimatu");
        rewardmodel.setAttribute("position", "0 0 1"); 
        rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
-       rewardmodel.setAttribute("rotation", "-90 -180 0");}
+       rewardmodel.setAttribute("rotation", "-90 180 0");}
        else if(random>=10)
       {rewardmodel.setAttribute("gltf-model", "#yari");
        rewardmodel.setAttribute("position", "0 0 1"); 
          rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
-       rewardmodel.setAttribute("rotation", "-90 -180 0");}
+       rewardmodel.setAttribute("rotation", "-90 180 0");}
           else 
        {rewardmodel.setAttribute("gltf-model", "#kne");
        rewardmodel.setAttribute("position", "0 1 0"); 
        rewardmodel.setAttribute("scale", "0.5 0.5 0.5"); 
-        rewardmodel.setAttribute("rotation", "-90 -180 0");}
+        rewardmodel.setAttribute("rotation", "-90 180 0");}
         
       if (markerEl) {
         markerEl.appendChild(rewardmodel);
@@ -144,7 +144,7 @@ layout: null
                 <!-- 3Dモデル -->
     
    <a-entity position="0 -0.05 0" hit-box>
-                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="1 1 1" position="0 0.1 0" visible="true" data-type="atari-hantei-1"></a-entity>
+                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="0.5 0.5 0.5" position="0 0.1 0" visible="true" data-type="atari-hantei-1"></a-entity>
                 </a-entity>
       <a-entity gltf-model="#bouningen" scale="0.5 0.5 0.5" rotation="180 0 0"></a-entity>
             </a-entity>
