@@ -64,18 +64,28 @@ layout: null
       if (model && model.parentNode) {
             model.parentNode.removeChild(model);}
      rewardmodel = document.createElement("a-entity");
-      if (random>=90)
+         if (random>=95)
+      {rewardmodel.setAttribute("gltf-model", "#utiwa");
+        rewardmodel.setAttribute("position", "0 0 1"); 
+        rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
+        rewardmodel.setAttribute("rotation", "-90 270 0");}
+      else if (random>=90)
       {rewardmodel.setAttribute("gltf-model", "#utiwa");
         rewardmodel.setAttribute("position", "0 0 1"); 
         rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
         rewardmodel.setAttribute("rotation", "-90 270 0");}
       else if(random>=50)
-      {rewardmodel.setAttribute("gltf-model", "#taimatu");
+      {rewardmodel.setAttribute("gltf-model", "#koumori");
        rewardmodel.setAttribute("position", "0 0 1"); 
        rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
        rewardmodel.setAttribute("rotation", "-90 -180 0");}
        else if(random>=10)
-      {rewardmodel.setAttribute("gltf-model", "#yari");
+      {rewardmodel.setAttribute("gltf-model", "#tako");
+       rewardmodel.setAttribute("position", "0 0 1"); 
+         rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
+       rewardmodel.setAttribute("rotation", "-90 -180 0");}
+      else if(random>=5)
+      {rewardmodel.setAttribute("gltf-model", "#tako");
        rewardmodel.setAttribute("position", "0 0 1"); 
          rewardmodel.setAttribute("scale", "0.3 0.3 0.3"); 
        rewardmodel.setAttribute("rotation", "-90 -180 0");}
@@ -123,7 +133,7 @@ layout: null
     <a-asset-item id="utiwa" src="model/utiwa.glb"></a-asset-item>
     <a-asset-item id="yari" src="model/yari.glb"></a-asset-item>
     <a-asset-item id="bouningen" src="model/yarakasita.glb"></a-asset-item>
-    <a-asset-item id="tako" src="model/yarakasita.glb"></a-asset-item>
+    <a-asset-item id="tako" src="model/sabottenaidesu.glb"></a-asset-item>
     <a-asset-item id="koumori" src="model/koumorimodoki.glb"></a-asset-item>
     <a-asset-item id="koumorimodoki" src="model/koumorimodoki.glb"></a-asset-item>
     <a-asset-item id="touch" src="model/touch (1).glb"></a-asset-item></a-assets>
@@ -136,7 +146,7 @@ layout: null
         <a-entity gltf-model="#touch" rotation="0 270 90" class="default-model"></a-entity>
 
             <a-entity position="0 0 3" hit-box>
-                    <a-entity class="raycastable" geometry="primitive:box" material="color:red; opacity: 0.5" scale="3 4 4" position="0 0 -4.5" visible="true"></a-entity>
+                    <a-entity class="raycastable" geometry="primitive:box" visible="false" scale="3 4 4" position="0 0 -4.5" visible="true"></a-entity>
                 </a-entity>
         </a-marker>
            
