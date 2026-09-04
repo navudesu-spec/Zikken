@@ -20,7 +20,9 @@ AFRAME.registerComponent('hit-box', {
     const targetEl = this.el.querySelector('.raycastable'); 
     this.el.addEventListener('click', () => {
       
-        if (targetEl) {
+        
+      let rewardmodel = null;
+      if (targetEl) {
           targetEl.setAttribute("visible", false);
         }
       if (raycasterEl) {
@@ -57,7 +59,7 @@ AFRAME.registerComponent('hit-box', {
           markerEl.appendChild(model); }
     
     setTimeout(() => {
-         let rewardmodel = null;
+         
       if (model && model.parentNode) {
             model.parentNode.removeChild(model);}
      rewardmodel = document.createElement("a-entity");
