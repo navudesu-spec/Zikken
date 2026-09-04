@@ -57,9 +57,9 @@ AFRAME.registerComponent('hit-box', {
     
   if (markerEl) {
           markerEl.appendChild(model); }
-    
+       let rewardmodel = null;
     setTimeout(() => {
-          let rewardmodel = null;
+       
       if (model && model.parentNode) {
             model.parentNode.removeChild(model);}
      rewardmodel = document.createElement("a-entity");
