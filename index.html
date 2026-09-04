@@ -21,7 +21,7 @@ AFRAME.registerComponent('hit-box', {
     this.el.addEventListener('click', () => {
       
         
-      let rewardmodel = null;
+     
       if (targetEl) {
           targetEl.setAttribute("visible", false);
         }
@@ -59,7 +59,7 @@ AFRAME.registerComponent('hit-box', {
           markerEl.appendChild(model); }
     
     setTimeout(() => {
-         
+          let rewardmodel = null;
       if (model && model.parentNode) {
             model.parentNode.removeChild(model);}
      rewardmodel = document.createElement("a-entity");
@@ -87,7 +87,7 @@ AFRAME.registerComponent('hit-box', {
       if (markerEl) {
         markerEl.appendChild(rewardmodel);
       }
-     }, 3000);
+    
      
     
     
@@ -106,7 +106,8 @@ AFRAME.registerComponent('hit-box', {
           if (touchModel) {
           touchModel.setAttribute('visible', true); 
         }
-      }, 6000); 
+      }, 3000); 
+       }, 6000);
     });
   }
 });
